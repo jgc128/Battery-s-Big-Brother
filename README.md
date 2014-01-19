@@ -1,0 +1,1 @@
+This app allow you to watch battery status of your Windows Phone on tablet/personal computer with Windows 8
