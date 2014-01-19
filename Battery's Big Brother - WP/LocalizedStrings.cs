@@ -1,6 +1,6 @@
-﻿using Battery_s_Big_Brother___WP.Resources;
+﻿using BBB_WP.Resources;
 
-namespace Battery_s_Big_Brother___WP
+namespace BBB_WP
 {
 	/// <summary>
 	/// Provides access to string resources.

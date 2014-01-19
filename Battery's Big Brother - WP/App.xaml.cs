@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Battery_s_Big_Brother___WP.Resources;
+using BBB_WP.Resources;
 
-namespace Battery_s_Big_Brother___WP
+namespace BBB_WP
 {
 	public partial class App : Application
 	{

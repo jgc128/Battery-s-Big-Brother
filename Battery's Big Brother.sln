@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery's Big Brother - WP", "Battery's Big Brother - WP\Battery's Big Brother - WP.csproj", "{09A9F6AD-5071-4445-B595-C9798E72633C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery's Big Brother - Common", "Battery's Big Brother - Common\Battery's Big Brother - Common.csproj", "{15E02B6C-A524-4C2F-B831-8A897AA54AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery's Big Brother - WP - Background Agent", "Battery's Big Brother - WP - Background Agent\Battery's Big Brother - WP - Background Agent.csproj", "{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery's Big Brother - WP - Common", "Battery's Big Brother - WP - Common\Battery's Big Brother - WP - Common.csproj", "{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,38 @@ Global
 		{09A9F6AD-5071-4445-B595-C9798E72633C}.Release|x86.ActiveCfg = Release|x86
 		{09A9F6AD-5071-4445-B595-C9798E72633C}.Release|x86.Build.0 = Release|x86
 		{09A9F6AD-5071-4445-B595-C9798E72633C}.Release|x86.Deploy.0 = Release|x86
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Release|ARM.ActiveCfg = Release|Any CPU
+		{15E02B6C-A524-4C2F-B831-8A897AA54AD2}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|ARM.Build.0 = Debug|ARM
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|x86.ActiveCfg = Debug|x86
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Debug|x86.Build.0 = Debug|x86
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|ARM.ActiveCfg = Release|ARM
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|ARM.Build.0 = Release|ARM
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|x86.ActiveCfg = Release|x86
+		{C6FF4FC7-2C3E-4F2F-9783-5E4C8A901BF5}.Release|x86.Build.0 = Release|x86
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|ARM.Build.0 = Debug|ARM
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|x86.ActiveCfg = Debug|x86
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Debug|x86.Build.0 = Debug|x86
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|ARM.ActiveCfg = Release|ARM
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|ARM.Build.0 = Release|ARM
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|x86.ActiveCfg = Release|x86
+		{2ECE4F06-ACEA-4606-9AD9-56FFC39AD1F5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
