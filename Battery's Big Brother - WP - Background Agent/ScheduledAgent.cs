@@ -58,17 +58,31 @@ namespace BBB_WP_Background_Agent
 
 		private void updateLiveTile()
 		{
+			// Get info
 			var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
 			var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
+
+			// Set data
+			var title = "BBB";
+			var count = batteryLevel;
+			var header = "Осталось врпемени";
+			var content = dischargeTime.ToString();
+			if (BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower)
+			{
+				header = "Подключено";
+				content = "";
+			}
+
 
 			var tile = ShellTile.ActiveTiles.FirstOrDefault();
 
 			if (tile != null)
 			{
-				var tileData = new FlipTileData();
-				tileData.Count = batteryLevel;
-				tileData.BackContent = dischargeTime.ToString();
-				tileData.BackTitle = "Осталось времени";
+				var tileData = new IconicTileData();
+				tileData.Title = title;
+				tileData.Count = count;
+				tileData.WideContent1 = header;
+				tileData.WideContent2 = content;
 
 				tile.Update(tileData);
 			}

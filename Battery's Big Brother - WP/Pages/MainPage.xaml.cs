@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using BBB_WP.Resources;
+using BBB_WP_Common;
 
 namespace BBB_WP
 {
@@ -19,6 +20,9 @@ namespace BBB_WP
 			InitializeComponent();
 
 			BuildLocalizedApplicationBar();
+
+			var agentControl = new AgentControl();
+			agentControl.StartAgent();
 		}
 
 		private void BuildLocalizedApplicationBar()
