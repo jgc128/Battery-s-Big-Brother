@@ -51,7 +51,7 @@ namespace BBB_WP_Common
 				RemoveAgent();
 
 			task = new PeriodicTask(TaskName);
-			task.Description = "Update information of battery level";
+			task.Description = CommonResources.BackgroundTaskDescription;
 
 			// Place the call to Add in a try block in case the user has disabled agents.
 			try
@@ -60,7 +60,7 @@ namespace BBB_WP_Common
 
 				// If debugging is enabled, use LaunchForTest to launch the agent in one minute.
 				#if(DEBUG)
-				ScheduledActionService.LaunchForTest(TaskName, TimeSpan.FromSeconds(5));
+				ScheduledActionService.LaunchForTest(TaskName, TimeSpan.FromSeconds(120));
 				#endif
 			}
 			catch (InvalidOperationException exception)

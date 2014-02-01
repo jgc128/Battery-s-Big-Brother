@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using BBB_WP.Resources;
+using BBB_WP_Common.Device;
 
 namespace BBB_WP
 {
@@ -17,6 +18,10 @@ namespace BBB_WP
 		/// </summary>
 		/// <returns>The root frame of the Phone Application.</returns>
 		public static PhoneApplicationFrame RootFrame { get; private set; }
+
+
+		static bool isTileUpdated = false;
+
 
 		/// <summary>
 		/// Constructor for the Application object.
@@ -73,12 +78,14 @@ namespace BBB_WP
 		// This code will not execute when the application is closing
 		private void Application_Deactivated(object sender, DeactivatedEventArgs e)
 		{
+			updateTile();
 		}
 
 		// Code to execute when the application is closing (eg, user hit Back)
 		// This code will not execute when the application is deactivated
 		private void Application_Closing(object sender, ClosingEventArgs e)
 		{
+			updateTile();
 		}
 
 		// Code to execute if a navigation fails
@@ -100,6 +107,28 @@ namespace BBB_WP
 				Debugger.Break();
 			}
 		}
+
+		private void updateTile()
+		{
+			if (!isTileUpdated)
+			{
+				// Get info
+				var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
+				var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
+
+				// Update tile
+				TileManager tileManager = new TileManager();
+				tileManager.UpdateTile(batteryLevel, dischargeTime);
+			}
+		}
+
+
+
+
+
+
+
+
 
 		#region Phone application initialization
 

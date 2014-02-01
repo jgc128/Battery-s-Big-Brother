@@ -6,7 +6,9 @@ using System.Linq;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using System;
-using BBB_WP_Background_Agent.Resources;
+using System.Threading.Tasks;
+using BBB_WP_Common.Service;
+using BBB_WP_Common.Device;
 
 
 namespace BBB_WP_Background_Agent
@@ -44,49 +46,31 @@ namespace BBB_WP_Background_Agent
 		/// <remarks>
 		/// This method is called when a periodic or resource intensive task is invoked
 		/// </remarks>
-		protected override void OnInvoke(ScheduledTask task)
+		protected override async void OnInvoke(ScheduledTask task)
 		{
-
-			updateLiveTile();
+			await doBackgroundWork();
 
 			// If debugging is enabled, launch the agent again in one minute.
 			#if DEBUG
-			ScheduledActionService.LaunchForTest(task.Name, TimeSpan.FromSeconds(20));
+			ScheduledActionService.LaunchForTest(task.Name, TimeSpan.FromSeconds(120));
 			#endif
 
 			NotifyComplete();
 		}
 
-		private void updateLiveTile()
+		private async Task doBackgroundWork()
 		{
 			// Get info
 			var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
 			var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
+			var deviceId = BBB_WP_Common.Device.DeviceInfo.DeviceId;
 
-			// Set data
-			var title = AppResources.TileTitle;
-			var count = batteryLevel;
-			var header = AppResources.TileHeader;//"Осталось врпемени";
-			var content = dischargeTime.ToString(AppResources.TileContentTemplate);
-			if (BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower)
-			{
-				header = AppResources.TileHeaderPlugged;
-				content = "";
-			}
+			ServiceClient client = new ServiceClient();
+			TileManager tileManager = new TileManager();
 
-
-			var tile = ShellTile.ActiveTiles.FirstOrDefault();
-
-			if (tile != null)
-			{
-				var tileData = new IconicTileData();
-				tileData.Title = title;
-				tileData.Count = count;
-				tileData.WideContent1 = header;
-				tileData.WideContent2 = content;
-
-				tile.Update(tileData);
-			}
+			tileManager.UpdateTile(batteryLevel, dischargeTime);
+			await client.AddMeasure(deviceId, batteryLevel);
 		}
+
 	}
 }

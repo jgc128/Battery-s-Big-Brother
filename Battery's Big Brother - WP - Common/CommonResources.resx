@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BackgroundTaskDescription" xml:space="preserve">
+    <value>Update information of battery level</value>
+  </data>
   <data name="TileContentTemplate" xml:space="preserve">
     <value>%hh' h. and '%m' min.'</value>
   </data>
