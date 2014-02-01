@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using System;
+using BBB_WP_Background_Agent.Resources;
 
 
 namespace BBB_WP_Background_Agent
@@ -63,13 +64,13 @@ namespace BBB_WP_Background_Agent
 			var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
 
 			// Set data
-			var title = "BBB";
+			var title = AppResources.TileTitle;
 			var count = batteryLevel;
-			var header = "Осталось врпемени";
-			var content = dischargeTime.ToString();
+			var header = AppResources.TileHeader;//"Осталось врпемени";
+			var content = dischargeTime.ToString(AppResources.TileContentTemplate);
 			if (BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower)
 			{
-				header = "Подключено";
+				header = AppResources.TileHeaderPlugged;
 				content = "";
 			}
 
