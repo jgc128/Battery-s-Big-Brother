@@ -16,9 +16,9 @@
     <Tokens>
       <PrimaryToken TokenID="Battery_s_Big_Brother___WPToken" TaskName="_default">
         <TemplateIconic>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">IconImage75.png</SmallImageURI>
           <Count>0</Count>
-          <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconicTileMediumLarge.png</IconImageURI>
+          <IconImageURI IsRelative="true" IsResource="false">SmallIconImage75.png</IconImageURI>
           <Title>
           </Title>
           <Message>

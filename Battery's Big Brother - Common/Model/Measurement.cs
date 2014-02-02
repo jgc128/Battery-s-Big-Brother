@@ -14,6 +14,9 @@ namespace BBB_Common.Model
 
 		public int BatteryLevel { get; set; }
 
+		public bool IsPlugged { get; set; }
+
 		public DateTime Date { get; set; }
+
 	}
 }

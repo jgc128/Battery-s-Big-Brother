@@ -64,12 +64,13 @@ namespace BBB_WP_Background_Agent
 			var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
 			var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
 			var deviceId = BBB_WP_Common.Device.DeviceInfo.DeviceId;
+			var isPlugged = BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower;
 
 			ServiceClient client = new ServiceClient();
 			TileManager tileManager = new TileManager();
 
 			tileManager.UpdateTile(batteryLevel, dischargeTime);
-			await client.AddMeasure(deviceId, batteryLevel);
+			await client.AddMeasure(deviceId, batteryLevel, isPlugged);
 		}
 
 	}

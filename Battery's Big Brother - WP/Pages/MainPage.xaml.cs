@@ -24,7 +24,7 @@ namespace BBB_WP
 			var agentControl = new AgentControl();
 			agentControl.StartAgent();
 
-			tbBatteryLevel.Text = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent.ToString();
+			//tbBatteryLevel.Text = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent.ToString();
 		}
 
 		private void BuildLocalizedApplicationBar()

@@ -22,6 +22,8 @@ namespace BBB_WP_Common.Device
 				content = "";
 			}
 
+			var images = getTileImageUri(BatteryLevel);
+
 			var tile = ShellTile.ActiveTiles.FirstOrDefault();
 
 			if (tile != null)
@@ -32,8 +34,24 @@ namespace BBB_WP_Common.Device
 				tileData.WideContent1 = header;
 				tileData.WideContent2 = content;
 
+				tileData.IconImage = images.Item1;
+				tileData.SmallIconImage = images.Item2;
+
 				tile.Update(tileData);
 			}
+		}
+
+		/// <summary>
+		/// Return Uri of tile images based on battery level
+		/// </summary>
+		/// <param name="batteryLevel">Battery level in percent</param>
+		/// <returns>Tuple.Item1 - IconImage, Tuple.Item2 - SmallIconImage</returns>
+		Tuple<Uri, Uri> getTileImageUri(int batteryLevel)
+		{
+			Uri uriImage = new Uri("/Assets/Tiles/IconImage25.png", UriKind.Relative);
+			Uri uriSmallImage = new Uri("/Assets/Tiles/SmallIconImage25.png", UriKind.Relative);
+
+			return new Tuple<Uri, Uri>(uriImage, uriSmallImage);
 		}
 	}
 }
