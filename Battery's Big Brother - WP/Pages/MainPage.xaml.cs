@@ -35,9 +35,9 @@ namespace BBB_WP
 
 		private void setRectangleBattery(int batteryLevel)
 		{
-			var baseHeight = 210.0;
+			var baseHeight = 210;
 
-			var actualHeight = baseHeight * (batteryLevel / 100);
+			var actualHeight = baseHeight * (batteryLevel / 100.0);
 			rctBatteryLevel.Height = actualHeight;
 		}
 

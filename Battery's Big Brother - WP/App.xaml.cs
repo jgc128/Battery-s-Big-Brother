@@ -115,10 +115,11 @@ namespace BBB_WP
 				// Get info
 				var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
 				var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
+				var isPlugged = BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower;
 
 				// Update tile
 				TileManager tileManager = new TileManager();
-				tileManager.UpdateTile(batteryLevel, dischargeTime);
+				tileManager.UpdateTile(batteryLevel, dischargeTime, isPlugged);
 			}
 		}
 
