@@ -137,4 +137,7 @@
   <data name="SettingsPageHeader" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>status</value>
+  </data>
 </root>

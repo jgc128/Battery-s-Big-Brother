@@ -69,7 +69,7 @@ namespace BBB_WP_Background_Agent
 			ServiceClient client = new ServiceClient();
 			TileManager tileManager = new TileManager();
 
-			tileManager.UpdateTile(batteryLevel, dischargeTime);
+			tileManager.UpdateTile(batteryLevel, dischargeTime, isPlugged);
 			await client.AddMeasure(deviceId, batteryLevel, isPlugged);
 		}
 

@@ -10,19 +10,19 @@ namespace BBB_WP_Common.Device
 	public class TileManager
 	{
 
-		public void UpdateTile(int BatteryLevel, TimeSpan DischargeTime)
+		public void UpdateTile(int BatteryLevel, TimeSpan DischargeTime, bool isPlugged)
 		{
 			var title = CommonResources.TileTitle;
 			var count = BatteryLevel;
 			var header = CommonResources.TileHeader;//"Осталось врпемени";
 			var content = DischargeTime.ToString(CommonResources.TileContentTemplate);
-			if (BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower)
+			if (isPlugged)
 			{
 				header = CommonResources.TileHeaderPlugged;
 				content = "";
 			}
 
-			var images = getTileImageUri(BatteryLevel);
+			var images = GetTileImagesUri(BatteryLevel);
 
 			var tile = ShellTile.ActiveTiles.FirstOrDefault();
 
@@ -46,10 +46,25 @@ namespace BBB_WP_Common.Device
 		/// </summary>
 		/// <param name="batteryLevel">Battery level in percent</param>
 		/// <returns>Tuple.Item1 - IconImage, Tuple.Item2 - SmallIconImage</returns>
-		Tuple<Uri, Uri> getTileImageUri(int batteryLevel)
+		public Tuple<Uri, Uri> GetTileImagesUri(int batteryLevel)
 		{
-			Uri uriImage = new Uri("/Assets/Tiles/IconImage25.png", UriKind.Relative);
-			Uri uriSmallImage = new Uri("/Assets/Tiles/SmallIconImage25.png", UriKind.Relative);
+			var baseUrl = "/Assets/Tiles/";
+			var imagePart = "IconImage";
+			var smallImagePart = "SmallIconImage";
+
+			var level = 100;
+
+			if (batteryLevel < 80)
+				level = 75;
+			if (batteryLevel < 60)
+				level = 50;
+			if (batteryLevel < 40)
+				level = 25;
+			if (batteryLevel < 20)
+				level = 0;
+			
+			Uri uriImage = new Uri(baseUrl + imagePart + level + ".png", UriKind.Relative);
+			Uri uriSmallImage = new Uri(baseUrl + smallImagePart + level + ".png", UriKind.Relative);
 
 			return new Tuple<Uri, Uri>(uriImage, uriSmallImage);
 		}

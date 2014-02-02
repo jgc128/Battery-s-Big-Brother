@@ -121,7 +121,7 @@
     <value>Update information of battery level</value>
   </data>
   <data name="TileContentTemplate" xml:space="preserve">
-    <value>%hh' h. and '%m' min.'</value>
+    <value>%h' h. and '%m' min.'</value>
   </data>
   <data name="TileHeader" xml:space="preserve">
     <value>Time left</value>

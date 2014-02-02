@@ -26,7 +26,8 @@ namespace BBB_WP_Common.Service
 			{
 				DeviceId = DeviceId,
 				BatteryLevel = BatteryLevel,
-				Date = DateTime.Now
+				Date = DateTime.Now,
+				IsPlugged = IsPlugged
 			});
 		}
 		

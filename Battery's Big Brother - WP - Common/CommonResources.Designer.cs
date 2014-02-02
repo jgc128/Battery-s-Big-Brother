@@ -70,7 +70,7 @@ namespace BBB_WP_Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to %hh&apos; h. and &apos;%m&apos; min.&apos;.
+        ///   Looks up a localized string similar to %h&apos; h. and &apos;%m&apos; min.&apos;.
         /// </summary>
         public static string TileContentTemplate {
             get {

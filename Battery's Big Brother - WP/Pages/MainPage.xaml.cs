@@ -24,7 +24,27 @@ namespace BBB_WP
 			var agentControl = new AgentControl();
 			agentControl.StartAgent();
 
+			var batteryLevel = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent;
+			var dischargeTime = BBB_WP_Common.Device.DeviceInfo.RemainingDischargeTime;
+			var isPlugged = BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower;
+
+			setRectangleBattery(batteryLevel);
+			setTextStatus(batteryLevel, dischargeTime, isPlugged);
 			//tbBatteryLevel.Text = BBB_WP_Common.Device.DeviceInfo.RemainingChargePercent.ToString();
+		}
+
+		private void setRectangleBattery(int batteryLevel)
+		{
+			var baseHeight = 210.0;
+
+			var actualHeight = baseHeight * (batteryLevel / 100);
+			rctBatteryLevel.Height = actualHeight;
+		}
+
+		private void setTextStatus(int batteryLevel, TimeSpan dischargeTime, bool isPlugged)
+		{
+			tbTestStatusLevel.Text = batteryLevel + "%";
+			tbTestStatusText.Text = dischargeTime.ToString(CommonResources.TileContentTemplate);
 		}
 
 		private void BuildLocalizedApplicationBar()

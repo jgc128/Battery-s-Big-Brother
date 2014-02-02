@@ -42,12 +42,24 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock Text="{Binding Path=LocalizedResources.MainPageTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="280"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
 			
+			<Rectangle HorizontalAlignment="Center" Height="20" VerticalAlignment="Top" Width="50" Fill="White"/>
+			<Rectangle HorizontalAlignment="Center" Height="250" Stroke="White" VerticalAlignment="Bottom" Width="140" StrokeThickness="10"/>
+			<Rectangle Name="rctBatteryLevel" Fill="White" HorizontalAlignment="Center" Height="210" StrokeThickness="10" VerticalAlignment="Bottom" Width="100" Margin="0,0,0,20"/>
+			<StackPanel Grid.Row="1" Margin="0,40,0,0">
+				<TextBlock x:Name="tbTestStatusLevel" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+				<TextBlock x:Name="tbTestStatusText" TextWrapping="Wrap" Text="TextBlock" Style="{StaticResource PhoneTextLargeStyle}" HorizontalAlignment="Center"/>
+			</StackPanel>
+
 		</Grid>
 
 		<!--Uncomment to see an alignment grid to help ensure your controls are
