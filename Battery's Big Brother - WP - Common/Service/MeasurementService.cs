@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace BBB_WP_Common.Service
 {
-	public class ServiceClient
+	public class MeasurementService
 	{
 		static MobileServiceClient mobileService = new MobileServiceClient(
 			"https://battery-s-big-brother.azure-mobile.net/",
 			"FfOipHqfewlJRhjoQyQZaBCnhIyLls25"
 		);
 
-		public ServiceClient()
+		public MeasurementService()
 		{
  
 		}

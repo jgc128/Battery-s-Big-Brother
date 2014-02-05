@@ -66,7 +66,7 @@ namespace BBB_WP_Background_Agent
 			var deviceId = BBB_WP_Common.Device.DeviceInfo.DeviceId;
 			var isPlugged = BBB_WP_Common.Device.DeviceInfo.IsPluggedToPower;
 
-			ServiceClient client = new ServiceClient();
+			MeasurementService client = new MeasurementService();
 			TileManager tileManager = new TileManager();
 
 			tileManager.UpdateTile(batteryLevel, dischargeTime, isPlugged);
